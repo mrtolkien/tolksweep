@@ -3,25 +3,12 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include "includes/behaviors.dtsi" // Home-row mods, ...
+#include "includes/macros.dtsi"    // Accent macros
 #include <dt-bindings/zmk/bt.h>
 
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
-
 / {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
+    // TODO REVIEW, LOOKS COOL
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -35,13 +22,13 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp q      &kp c      &kp o      &kp p      &kp p          &kp j      &kp m      &kp d      &kp DOLLAR      &kp y
+            &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp a      &kp s      &kp e      &kp e      &kp n          &kp l      &kp r      &kp t      &kp i      &kp u
+            &kp A      &hm LALT S &hm LCTRL E &hm LGUI N &kp F         &kp L      &hm RGUI R &hm RCTRL L &hm LALT I &kp U
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp z      &kp x      &kp minus      &kp v      &kp b          &kp PERIOD      &kp h      &kp g      &kp COMMA    &kp k
+            &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &lt 2 TAB   &sk LSHIFT    &kp SPACE  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
