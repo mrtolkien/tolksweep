@@ -13,25 +13,13 @@
 #define NUM_L 3
 #define SYM_L 4
 #define FN_L 5
-#define GM_L 6
-#define LGM_L 7
-#define LGM2_L 8
 #define HYP(key) LS(LC(LA(LG(key))))
 #define MEH(key) LS(LC(LA(key)))
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <180>; };
+&lt { quick-tap-ms = <175>; };
 
 / {
-    // TODO REVIEW, LOOKS COOL
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     tri_layer {
-    //         if-layers = <1 2>;
-    //         then-layer = <3>;
-    //     };
-    // };
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -39,7 +27,7 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &kp Q      &kp C      &kp O      &kp P      &kp W          &kp J      &kp M      &kp D      &odkexc    &kp Y
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &lt FN_L A      &hm LALT S &hm LCTRL E &hm LGUI N &kp F         &kp L      &hm RGUI R &hm RCTRL T &hm LALT I &kp U
+            &lt FN_L A &hml LALT S &hml LCTRL E &hml LGUI N &kp F    &kp L      &hmr RGUI R &hmr RCTRL T &hmr LALT I &kp U
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &dashion   &kp V      &kp B          &pecol     &kp H      &kp G      &comacol   &kp K
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
@@ -49,7 +37,6 @@
         };
 
         odk {
-            label = "ODK_OneDeadKey";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &a_circ   &kp RA(C)    &kp LA(Q)    &o_circ     &trans        &trans        &trans        &kp UNDER     &kp LA(U) &u_circ
@@ -64,7 +51,6 @@
         };
 
         nav_layer {
-            label = "NAV_Navigation";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &trans    &kp HOME   &kp UP     &kp END    &kp PAGE_UP    &kp C_VOL_UP &kp C_BRI_UP &trans &trans &trans
@@ -80,7 +66,6 @@
 
         math_layer {
             // Also used for Aerospace
-            label = "NUM_Numbers";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 &kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE) &kp KP_DIVIDE &kp N7        &kp N8        &kp N9 &kp KP_MULTIPLY
@@ -89,13 +74,12 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────
 &kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA   &kp N1        &kp N2        &kp N3        &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans        &kp DEL        &trans        &trans
+                                            &kp LCMD        &kp DEL        &trans        &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         sym_layer {
-            label = "SYM_Symbols";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
  &kp CARET             &kp LT      &kp GT       &kp DOLLAR    &kp PERCENT        &kp AT      &kp AMPS      &kp STAR    &kp SQT &kp GRAVE
@@ -110,12 +94,11 @@
         };
 
         fn_layer {
-            label = "FN_FnKeys";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&sys_reset             &bt BT_CLR    &bt BT_CLR_ALL &trans       &trans        &kp F10        &kp F7        &kp F8        &kp F9 &to GM_L
+&sys_reset             &bt BT_CLR    &bt BT_CLR_ALL &trans       &trans        &kp F10        &kp F7        &kp F8        &kp F9 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11        &kp F4        &kp F5        &kp F6        &to LGM_L        
+&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11        &kp F4        &kp F5        &kp F6        &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
               &trans        &trans        &trans        &trans        &bt BT_SEL 4  &kp F13        &kp F1        &kp F2        &kp F3       &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
@@ -144,19 +127,19 @@
 
         // Vim-inspired (old J-K)
         combo_exit {
-            timeout-ms = <40>;
+            timeout-ms = <35>;
             key-positions = <22 23>;
             bindings = <&kp ESC>;
             // layers = <0>;
-            require-prior-idle-ms = <200>;  
+            require-prior-idle-ms = <150>;  
         };
 
         combo_ret {
-            timeout-ms = <40>;
+            timeout-ms = <35>;
             key-positions = <26 27>;
             bindings = <&kp RET>;
             // layers = <0>;
-            require-prior-idle-ms = <200>;  
+            require-prior-idle-ms = <150>;  
         };
     
         // Braces combos
