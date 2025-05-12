@@ -68,11 +68,11 @@
             // Also used for Aerospace
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE) &kp KP_DIVIDE &kp N7        &kp N8        &kp N9 &kp KP_MULTIPLY
+&kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE) &kp KP_DIVIDE &kp N7 &kp N8 &kp N9    &kp SPACE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT) &kp MINUS      &kp N4      &kp N5        &kp N6        &kp N0        
+&kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT) &kp PLUS &kp N4    &kp N5      &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────
-&kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA   &kp N1        &kp N2        &kp N3        &kp PERIOD
+&kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA &kp N1 &kp N2   &kp N3     &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                             &kp LCMD        &kp DEL        &trans        &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -96,11 +96,11 @@
         fn_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&sys_reset             &bt BT_CLR    &bt BT_CLR_ALL &trans       &trans        &kp F10        &kp F7        &kp F8        &kp F9 &trans
+           &bootloader &bt BT_CLR &bt BT_CLR_ALL &trans  &trans         &kp F10    &kp F7      &kp F8    &kp F9     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp F11        &kp F4        &kp F5        &kp F6        &trans
+           &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp F11 &kp F4      &kp F5    &kp F6     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-              &trans        &trans        &trans        &trans        &bt BT_SEL 4  &kp F13        &kp F1        &kp F2        &kp F3       &kp F12
+           &trans     &trans     &trans     &trans      &bt BT_SEL 4  &kp F13     &kp F1      &kp F2    &kp F3     &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                                         &bt BT_PRV        &bt BT_NXT    &trans        &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -127,20 +127,18 @@
         // Vim-inspired (old J-K)
         combo_exit {
             timeout-ms = <25>;
-            key-positions = <22 23>;
+            key-positions = <22 21>;
             bindings = <&kp ESC>;
-            // layers = <0>;
             require-prior-idle-ms = <125>;  
         };
 
         combo_ret {
             timeout-ms = <25>;
-            key-positions = <28 27>;
+            key-positions = <27 28>;
             bindings = <&kp RET>;
-            // layers = <0>;
             require-prior-idle-ms = <125>;  
         };
-    
+
         // Braces combos
         // TODO Aerospace here
         // combo_col_1 {
