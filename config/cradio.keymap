@@ -13,10 +13,10 @@
 #define NUM_L 3
 #define SYM_L 4
 #define FN_L 5
-#define HYP(key) LS(LC(LA(LG(key))))
 #define MEH(key) LS(LC(LA(key)))
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+// TODO Having some issues triggering thumb layers atm
 &lt { quick-tap-ms = <175>; };
 
 / {
@@ -53,13 +53,13 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &trans    &kp HOME   &kp UP     &kp END    &kp PAGE_UP    &kp C_VOL_UP &kp C_BRI_UP &trans &trans &trans
+          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP    &kp MEH(F10) &kp MEH(F11) &kp MEH(F12) &kp MEH(F13) &kp MEH(F16)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &trans    &kp LEFT   &kp DOWN   &kp RIGHT  &kp PAGE_DOWN  &kp C_VOL_DN &kp C_BRI_DN &trans        &trans &kp RIGHT_SHIFT
+           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F17) &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F4)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)  &trans      &kp C_MUTE   &kp C_STOP    &kp C_PREV    &kp C_NEXT    &kp C_PP
+           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(EQUAL) &kp MEH(F5) &kp MEH(F6) &kp MEH(F7) &kp MEH(F8) &kp MEH(F10)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans      &trans        &kp MEH(SPACE)        &kp MEH(BACKSPACE)
+                                            &trans      &trans        &mt LCMD MEH(SPACE)        &kp MEH(BACKSPACE)
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -96,13 +96,13 @@
         fn_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-           &bootloader &bt BT_CLR &bt BT_CLR_ALL &trans  &trans         &kp F10    &kp F7      &kp F8    &kp F9     &trans
+           &bootloader &bt BT_CLR &bt BT_CLR_ALL &trans  &trans         &kp F10  &kp F7      &kp F8    &kp F9     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp F11 &kp F4      &kp F5    &kp F6     &trans
+           &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp F11    &kp F4      &kp F5    &kp F6     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &trans     &trans     &trans     &trans      &bt BT_SEL 4  &kp F13     &kp F1      &kp F2    &kp F3     &kp F12
+           &trans     &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE &bt BT_SEL 4  &kp F13 &kp F1      &kp F2    &kp F3     &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                                        &bt BT_PRV        &bt BT_NXT    &trans        &trans
+                                            &kp C_VOL_UP &kp C_VOL_DN  &kp C_PP  &kp C_NEXT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -126,17 +126,17 @@
 
         // Vim-inspired (old J-K)
         combo_exit {
-            timeout-ms = <25>;
+            timeout-ms = <40>;
             key-positions = <22 21>;
             bindings = <&kp ESC>;
-            require-prior-idle-ms = <125>;  
+            require-prior-idle-ms = <100>;  
         };
 
         combo_ret {
-            timeout-ms = <25>;
+            timeout-ms = <40>;
             key-positions = <27 28>;
             bindings = <&kp RET>;
-            require-prior-idle-ms = <125>;  
+            require-prior-idle-ms = <100>;  
         };
 
         // Braces combos
