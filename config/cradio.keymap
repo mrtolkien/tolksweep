@@ -53,11 +53,11 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP    &kp MEH(F10) &kp MEH(F11) &kp MEH(F12) &kp MEH(F13) &kp MEH(F16)
+          &kp LG(MEH(TAB)) &kp HOME &kp UP    &kp END    &kp PAGE_UP  &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F4) &kp MEH(F5)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F17) &kp MEH(F1) &kp MEH(F2) &kp MEH(F3) &kp MEH(F4)
+           &kp MEH(TAB) &kp LEFT  &kp DOWN &kp RIGHT   &kp PAGE_DOWN  &kp MEH(F6) &hmr RGUI MEH(F7) &hmr RCTRL MEH(F8) &hmr LALT MEH(F9) &hmr RSHIFT MEH(F10)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(EQUAL) &kp MEH(F5) &kp MEH(F6) &kp MEH(F7) &kp MEH(F8) &kp MEH(F10)
+           &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(N1)     &kp MEH(F11) &kp MEH(F12) &kp MEH(F13) &kp MEH(F16) &kp MEH(F17)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
                                             &trans      &trans        &mt LCMD MEH(SPACE)        &kp MEH(BACKSPACE)
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -67,15 +67,15 @@
         math_layer {
             // Also used for Aerospace
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-&kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE) &kp KP_DIVIDE &kp N7 &kp N8 &kp N9    &kp SPACE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-&kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT) &kp PLUS &kp N4    &kp N5      &kp N6     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+&kp MEH(F20) &kp MEH(GRAVE) &kp MEH(UP) &kp MEH(MINUS) &kp MEH(SINGLE_QUOTE)  &kp KP_DIVIDE &kp N7 &kp N8 &kp N9    &kp SPACE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+&kp MEH(LBKT) &kp MEH(LEFT) &kp MEH(DOWN) &kp MEH(RIGHT) &kp MEH(RBKT)        &kp PLUS &kp N4    &kp N5      &kp N6     &kp N0
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────
 &kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA &kp N1 &kp N2   &kp N3     &kp PERIOD
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &kp LCMD        &kp DEL        &trans        &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+                                            &kp LCMD    &mt LCMD DEL          &trans        &trans
+        //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
             >;
         };
 
