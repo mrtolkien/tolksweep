@@ -13,7 +13,9 @@
 #define NUM_L 3
 #define SYM_L 4
 #define FN_L 5
+#define HYP_L 6
 #define MEH(key) LS(LC(LA(key)))
+#define HYP(key) LG(LS(LC(LA(key))))
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 // TODO Having some issues triggering thumb layers atm
@@ -59,7 +61,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
            &kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp MEH(N1)     &kp MEH(F11) &kp MEH(F12) &kp MEH(F13) &kp MEH(F16) &kp MEH(F17)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &trans      &trans        &mt LCMD MEH(SPACE)        &kp MEH(BACKSPACE)
+                                            &trans      &trans        &lt HYP_L MEH(SPACE)        &kp MEH(BACKSPACE)
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -74,7 +76,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────
 &kp MEH(MINUS) &kp MEH(SLASH) &kp MEH(EQUAL) &kp MEH(BACKSLASH) &kp MEH(LBKT) &kp COMMA &kp N1 &kp N2   &kp N3     &kp PERIOD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &kp LCMD    &mt LCMD DEL          &trans        &trans
+                                            &kp LCMD    &lt HYP_L DEL          &trans        &trans
         //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
             >;
         };
@@ -96,17 +98,40 @@
         fn_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-           &bootloader &bt BT_CLR &bt BT_CLR_ALL &trans  &trans         &kp F10  &kp F7      &kp F8    &kp F9     &trans
+&bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_CLR_ALL    &kp F10    &kp F7      &kp F8    &kp F9     &kp C_NEXT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp F11    &kp F4      &kp F5    &kp F6     &trans
+           &trans &trans &trans &trans &trans                         &kp F11    &kp F4      &kp F5    &kp F6     &kp C_PP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-           &trans     &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE &bt BT_SEL 4  &kp F13 &kp F1      &kp F2    &kp F3     &kp F12
+&kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE        &kp F13    &kp F1      &kp F2    &kp F3     &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                                            &kp C_VOL_UP &kp C_VOL_DN  &kp C_PP  &kp C_NEXT
+                                            &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
+        hyp_layer {
+            // Double thumbs layer
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮           ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+&kp HYP(F20) &kp HYP(GRAVE) &kp HYP(UP) &kp HYP(MINUS) &kp HYP(SINGLE_QUOTE)  &kp HYP(F1) &kp HYP(F2) &kp HYP(F3) &kp HYP(F4) &kp HYP(F5)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+&kp HYP(LBKT) &kp HYP(LEFT) &kp HYP(DOWN) &kp HYP(RIGHT) &kp HYP(RBKT)       &kp HYP(F6) &kp HYP(F7) &kp HYP(F8) &kp HYP(F9) &kp HYP(F10)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+&kp HYP(MINUS) &kp HYP(SLASH) &kp HYP(EQUAL) &kp HYP(BACKSLASH) &kp HYP(LBKT) &kp HYP(F11) &kp HYP(F12) &kp HYP(F13) &kp HYP(F16) &kp HYP(F17)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤           ├──────────┼──────────┼──────────┼──────────┼──────────┤
+                                            &trans      &trans          &trans        &trans
+        //                                 ╰──────────┴──────────╯           ╰──────────┴──────────╯
+            >;
+        };
+
+        // Did not work with non-&trans keys
+        // conditional_layers {
+        //     compatible = "zmk,conditional-layers";
+        //     thumbs_layer {
+        //         if-layers = <NUM_L SYM_L>;
+        //         then-layer = <HYP_L>;
+        //     };
+        // };
     };
     
     combos {
@@ -126,14 +151,14 @@
 
         // Vim-inspired (old J-K)
         combo_exit {
-            timeout-ms = <40>;
+            timeout-ms = <60>;
             key-positions = <22 21>;
             bindings = <&kp ESC>;
             require-prior-idle-ms = <100>;  
         };
 
         combo_ret {
-            timeout-ms = <40>;
+            timeout-ms = <60>;
             key-positions = <27 28>;
             bindings = <&kp RET>;
             require-prior-idle-ms = <100>;  
