@@ -151,17 +151,17 @@
 
         // Vim-inspired (old J-K)
         combo_exit {
-            timeout-ms = <60>;
+            timeout-ms = <80>;
             key-positions = <22 21>;
             bindings = <&kp ESC>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <60>;  
         };
 
         combo_ret {
-            timeout-ms = <60>;
+            timeout-ms = <100>;
             key-positions = <27 28>;
             bindings = <&kp RET>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
         // Braces combos
