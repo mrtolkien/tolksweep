@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:zmk.dev)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__github__list_commits",
+      "mcp__github__get_commit"
     ],
     "deny": [],
     "ask": []
