@@ -165,54 +165,53 @@
         };
 
         // Braces combos
-        // TODO Aerospace here
-        // combo_col_1 {
-        //     timeout-ms = <40>;
-        //     key-positions = <1 11>;
-        //     bindings = <&kp LEFT_BRACKET>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        /* combo_col_1 { */
+        /*     timeout-ms = <40>; */
+        /*     key-positions = <1 11>; */
+        /*     bindings = <&kp LEFT_BRACKET>; */
+        /*     layers = <0>; */
+        /*     require-prior-idle-ms = <100>;   */
+        /* }; */
 
-        // combo_col_2 {
-        //     timeout-ms = <40>;
-        //     key-positions = <2 12>;
-        //     bindings = <&kp LEFT_PARENTHESIS>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        combo_col_2 {
+            timeout-ms = <40>;
+            key-positions = <2 12>;
+            bindings = <&kp H>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;  
+        };
 
-        // combo_col_3 {
-        //     timeout-ms = <40>;
-        //     key-positions = <3 13>;
-        //     bindings = <&kp LEFT_BRACE>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        combo_col_3 {
+            timeout-ms = <40>;
+            key-positions = <3 13>;
+            bindings = <&kp J>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;  
+        };
 
-        // combo_col_4 {
-        //     timeout-ms = <40>;
-        //     key-positions = <6 16>;
-        //     bindings = <&kp RIGHT_BRACE>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        combo_col_4 {
+            timeout-ms = <40>;
+            key-positions = <6 16>;
+            bindings = <&kp K>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;  
+        };
 
-        // combo_col_5 {
-        //     timeout-ms = <40>;
-        //     key-positions = <7 17>;
-        //     bindings = <&kp RIGHT_PARENTHESIS>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        combo_col_5 {
+            timeout-ms = <40>;
+            key-positions = <7 17>;
+            bindings = <&kp L>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;  
+        };
 
-        // combo_col_6 {
-        //     timeout-ms = <40>;
-        //     key-positions = <8 18>;
-        //     bindings = <&kp RIGHT_BRACKET>;
-        //     layers = <0>;
-        //     require-prior-idle-ms = <100>;  
-        // };
+        /* combo_col_6 { */
+        /*     timeout-ms = <40>; */
+        /*     key-positions = <8 18>; */
+        /*     bindings = <&kp RIGHT_BRACKET>; */
+        /*     layers = <0>; */
+        /*     require-prior-idle-ms = <100>;   */
+        /* }; */
 
     };
 
