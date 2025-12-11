@@ -149,7 +149,6 @@
             require-prior-idle-ms = <200>;  
         };
 
-        // Vim-inspired (old J-K)
         combo_exit {
             timeout-ms = <80>;
             key-positions = <22 21>;
@@ -158,60 +157,40 @@
         };
 
         combo_ret {
-            timeout-ms = <100>;
+            timeout-ms = <80>;
             key-positions = <27 28>;
             bindings = <&kp RET>;
             require-prior-idle-ms = <50>;  
         };
 
-        // Braces combos
-        /* combo_col_1 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <1 11>; */
-        /*     bindings = <&kp LEFT_BRACKET>; */
-        /*     layers = <0>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
-
-        combo_col_2 {
-            timeout-ms = <40>;
-            key-positions = <2 12>;
+        combo_top_left_2 {
+            timeout-ms = <80>;
+            key-positions = <1 2>;
             bindings = <&kp H>;
-            layers = <0>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
-        combo_col_3 {
-            timeout-ms = <40>;
-            key-positions = <3 13>;
+        combo_top_left_3 {
+            timeout-ms = <80>;
+            key-positions = <2 3>;
             bindings = <&kp J>;
-            layers = <0>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
-        combo_col_4 {
-            timeout-ms = <40>;
-            key-positions = <6 16>;
+
+        combo_top_right_2 {
+            timeout-ms = <80>;
+            key-positions = <6 7>;
             bindings = <&kp K>;
-            layers = <0>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
-        combo_col_5 {
-            timeout-ms = <40>;
-            key-positions = <7 17>;
+        combo_top_right_3 {
+            timeout-ms = <80>;
+            key-positions = <7 8>;
             bindings = <&kp L>;
-            layers = <0>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
-
-        /* combo_col_6 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <8 18>; */
-        /*     bindings = <&kp RIGHT_BRACKET>; */
-        /*     layers = <0>; */
-        /*     require-prior-idle-ms = <100>;   */
-        /* }; */
 
     };
 
