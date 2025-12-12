@@ -153,25 +153,25 @@
             timeout-ms = <80>;
             key-positions = <22 21>;
             bindings = <&kp ESC>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
         combo_ret {
-            timeout-ms = <80>;
+            timeout-ms = <110>; // This one is particularly hard
             key-positions = <27 28>;
             bindings = <&kp RET>;
-            require-prior-idle-ms = <100>;  
+            require-prior-idle-ms = <50>;  
         };
 
         combo_top_left_2 {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp H>;
             require-prior-idle-ms = <100>;  
         };
 
         combo_top_left_3 {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <2 3>;
             bindings = <&kp J>;
             require-prior-idle-ms = <100>;  
@@ -179,14 +179,14 @@
 
 
         combo_top_right_2 {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <6 7>;
             bindings = <&kp K>;
             require-prior-idle-ms = <100>;  
         };
 
         combo_top_right_3 {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <7 8>;
             bindings = <&kp L>;
             require-prior-idle-ms = <100>;  
