@@ -163,6 +163,13 @@
             require-prior-idle-ms = <50>;  
         };
 
+        combo_pinkies {
+            timeout-ms = <90>;
+            key-positions = <10 19>;
+            bindings = <&kp Q>;
+            require-prior-idle-ms = <50>;  
+        };
+
         /* combo_top_left_2 { */
         /*     timeout-ms = <40>; */
         /*     key-positions = <1 2>; */
